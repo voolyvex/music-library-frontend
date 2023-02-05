@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import axios from "axios";
+import SongsMapper from "./components/SongsMapper";
+import SearchBar from "./components/SearchBar";
 
-function App() {
+const App = () => {
+  const [songs, setSongs] = useState([
+    // {
+    //   id: 1,
+    //   title: "Pain Makes You Better!",
+    //   artist: "Tony and Joe",
+    //   album: "In the Iron Maiden",
+    //   release_date: "1990-10-10",
+    //   genre: "Metal",
+    // },
+  ]);
+
+  const [userInput, setUserInput] = useState("");
+
+  const getAllSongs = async () => {
+    await axios
+      .get("http://127.0.0.1:8000/api/songs/")
+      .then((resp) => setSongs(resp.data));
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={() => getAllSongs()}>Get Songs!</button>
+      <SearchBar userInput={userInput} setUserInput={setUserInput} />
+      <SongsMapper userInput={userInput} songs={songs} />
     </div>
   );
-}
+};
 
 export default App;
