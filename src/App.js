@@ -13,15 +13,14 @@ const App = () => {
       album: "Chansons Parisiennes",
       release_date: "1947-01-01",
       genre: "Traditional Pop",
-    }
+    },
   ]);
-  
-  const [userInput, setUserInput] = useState("");
 
+  const [userInput, setUserInput] = useState("");
 
   useEffect(() => {
     getAllSongs();
-  }, [])
+  }, []);
 
   //   const getAllSongs = async () => {
   //   await axios
@@ -30,22 +29,31 @@ const App = () => {
   // };
   async function getAllSongs() {
     const response = await axios.get(`http://127.0.0.1:8000/api/songs/`);
-    setSongs(response.data)
+    setSongs(response.data);
+    setUserInput("");
   }
 
-  const postNewSong = async(songObject) => {
-    const response = await axios.post("http://127.0.0.1:8000/api/songs/", songObject);
-    console.log(response)
-    getAllSongs()
+  const postNewSong = async (songObject) => {
+    const response = await axios.post(
+      "http://127.0.0.1:8000/api/songs/",
+      songObject
+    );
+    console.log(response);
+    getAllSongs();
   };
 
   return (
     <div className="background">
-      <div className="App">
-        <button onClick={() => getAllSongs()}>Get All Songs!</button>
-        <SearchBar userInput={userInput} setUserInput={setUserInput} />
-        <SongsMapper songs={songs} userInput={userInput} />
-        <AddSongForm postNewSong={postNewSong} />
+      <div className="main-content">
+        <h1>React Music Library 🎵</h1>
+        <div className="navish">
+          <button className="refresh-button" onClick={() => getAllSongs()}>Refresh</button>
+          <SearchBar className="searchbar" userInput={userInput} setUserInput={setUserInput} />
+        </div>
+        <div className="forms">
+          <SongsMapper className="box" songs={songs} userInput={userInput} />
+          <AddSongForm className="box" postNewSong={postNewSong} />
+        </div>
       </div>
     </div>
   );

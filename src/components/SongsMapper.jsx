@@ -3,7 +3,7 @@ import SongPresenter from "./SongPresenter";
 
 const SongsMapper = ({ songs, userInput }) => {
     return (
-        <table>
+        <table className="box">
             <colgroup span="5"></colgroup>
             <tbody>
                 <tr>

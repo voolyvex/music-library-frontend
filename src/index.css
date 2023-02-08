@@ -1,25 +1,58 @@
 html{
   background-color: black;
+  height: 100%;
 }
-
+.box {
+  box-shadow: 10px 10px 10px black;
+}
 .background {
-  height:80em;
-  background-image: url('img/blocks-T3mKJXfdims-unsplash.jpg');
+  opacity: 80%;
+  background-image: url('img/immo-wegmann-bsyI2ZnZJfQ-unsplash.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  margin:auto;
+  height: 96%;
 }
+h1{
+  margin: auto;
+}
+.navish {
+  min-height: 35px;
+  max-height: 35px;
+  margin-left: 30%;
+  width: 35%;
+  display: inline-flex;
 
+}
+.refresh-button {
+  font-family: initial;
+  color: blueviolet;
+  min-height: 30px;
+  max-height: 30px;
+  margin-bottom: 10px;
+  box-shadow: 10px 10px 10px black;
+
+}
+.searchbar-form {
+  text-align: left;
+  vertical-align: middle;
+  padding-inline: 1%;
+  width: 100%;
+
+}
+.searchbar {
+  line-height: 18pt;
+  width: 100%;
+  
+}
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(209, 219, 219);
 }
-
 table,
 th,
 td {
-  border: 1px solid;
+  border: 2px solid;
   background: rgb(40, 40, 43);
 }
 
@@ -27,7 +60,7 @@ table {
   width: 100%;
   max-width: 800px;
   height: 100%;
-  max-height: 800px;
+  max-height: 600px;
   margin: 0 auto;
   display: block;
   overflow-x: auto;
@@ -58,16 +91,50 @@ td:last-child {
 }
 
 tr:last-child td {
-  border-bottom-width: 0;
+  border-bottom-width: auto;
 }
-
-.form-container {
-    background: rgb(56, 57, 58);
-    flood-opacity: 90%;
-
+.song-form-div {
+  max-height: 800px;
+  margin-top: 1rem;
+  
 }
 .song-form {
+  text-align: left;
+  font-kerning: none;
+  font-variant: small-caps;
+  font-size: medium;
+  line-height: 18pt;
+  border-color: rgb(165, 165, 243);
+  border-style: ridge;
   display: grid;
+  width: 100%;
+  max-width: 750px;
+  height: 100%;
+  max-height: 800px;
+  margin-top: 1rem;
   background: rgb(56, 57, 58);
   justify-content: space-around;
+  box-shadow: 7px 6px 10px black;
+  padding: 1em;
+
+}
+.main-content {
+  display: grid;
+  justify-content: space-around;
+  padding: 5%;
+}
+.save-button {
+  border-color: rgb(23, 189, 92);
+  border-width: 2px;
+  color: rgb(0, 0, 0);
+  font-family: initial;
+
+  font-variant: normal;
+  font-size: 12pt;
+  width: fit-content;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 4px;
+  margin-bottom: auto;
+  box-shadow: 5px 7px 7px rgb(46, 46, 46);
 }
