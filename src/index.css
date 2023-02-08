@@ -1,17 +1,21 @@
 html{
   background-color: black;
   height: 100%;
+  background: radial-gradient(black, rgb(41, 54, 70));
 }
 .box {
+  height: max-content;
   box-shadow: 10px 10px 10px black;
 }
 .background {
-  opacity: 80%;
+  opacity: 68%;
   background-image: url('img/immo-wegmann-bsyI2ZnZJfQ-unsplash.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 96%;
+  height: 100%;
+  border-style:hidden;
+  border-radius: 18px;
 }
 h1{
   margin: auto;
@@ -57,6 +61,9 @@ td {
 }
 
 table {
+  border-radius: 6px;
+  border-style: ridge;
+  border-width: 3px;
   width: 100%;
   max-width: 800px;
   height: 100%;
@@ -99,13 +106,13 @@ tr:last-child td {
   
 }
 .song-form {
+  border-radius: 6px;
   text-align: left;
   font-kerning: none;
-  font-variant: small-caps;
   font-size: medium;
-  line-height: 18pt;
+  line-height: 19pt;
   border-color: rgb(165, 165, 243);
-  border-style: ridge;
+  border-style: groove;
   display: grid;
   width: 100%;
   max-width: 750px;
@@ -121,7 +128,9 @@ tr:last-child td {
 .main-content {
   display: grid;
   justify-content: space-around;
-  padding: 5%;
+  padding-bottom: 20%;
+  padding-top: 5%;
+  min-height: max-content;
 }
 .save-button {
   border-color: rgb(23, 189, 92);
